@@ -18,6 +18,13 @@ class MemeDetailsPage extends ConnectionPageBase {
   const MemeDetailsPage({required this.meme, super.key});
 
   @override
+  Widget wrappedRoute(BuildContext context) {
+    return Scaffold(
+      body: this,
+    );
+  }
+
+  @override
   Widget readyContent(BuildContext context) {
     final size = MediaQuery.of(context).size;
 

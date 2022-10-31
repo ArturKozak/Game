@@ -1,13 +1,14 @@
 import 'package:animated_widgets/widgets/translation_animated.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:game/constants/app_colors.dart';
 import 'package:game/constants/app_constants.dart';
 import 'package:game/data/model/meme/meme_model.dart';
 import 'package:game/ui/common/meme_card/meme_card.dart';
-import 'package:game/ui/module/details_page/meme_details_page.dart';
 import 'package:game/ui/module/meme_select_page/cubit/view_cubit/meme_view_cubit.dart';
 import 'package:game/ui/module/meme_select_page/widget/custom/bottom_button.dart';
+import 'package:game/utils/app_router.gr.dart';
 
 class TranslationCustomWidget extends StatefulWidget {
   final MemeModel item;
@@ -53,20 +54,8 @@ class _TranslationCustomWidgetState extends State<TranslationCustomWidget> {
     await context.read<MemeViewCubit>().onClicked(meme: widget.item);
   }
 
-  void _navigate(MemeModel meme) => Navigator.of(context).push(
-        PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) {
-            final curvedAnimation = CurvedAnimation(
-              parent: animation,
-              curve: Curves.easeInOut,
-            );
-
-            return FadeTransition(
-              opacity: curvedAnimation,
-              child: MemeDetailsPage(meme: meme),
-            );
-          },
-        ),
+  void _navigate(MemeModel meme) => AutoRouter.of(context).push(
+        MemeDetailsRoute(meme: meme),
       );
 
   @override
