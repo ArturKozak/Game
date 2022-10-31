@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "559728426355",
+    "project_id": "meme-battle-a9470",
+    "storage_bucket": "meme-battle-a9470.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559728426355:android:c5456fc34432c0fa7b1906",
+        "android_client_info": {
+          "package_name": "com.game.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559728426355-u2994o7hnmucnkbl1k0lvd5n2eeabsi4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNPzfAfpxdU3PtqjNGnQRwvEmDxMGtJIY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559728426355-u2994o7hnmucnkbl1k0lvd5n2eeabsi4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
