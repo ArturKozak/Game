@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:game/base/page_base.dart';
 import 'package:game/constants/app_colors.dart';
+import 'package:game/constants/app_constants.dart';
 
 class BottomButtom extends PageWidget {
   static const _buttonHeight = 40.0;
   static const _buttonWidth = 110.0;
-  static const _borderRadius = 16.0;
 
   final VoidCallback onTap;
   final String label;
@@ -17,13 +17,13 @@ class BottomButtom extends PageWidget {
   });
 
   @override
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     return Container(
       height: _buttonHeight,
       width: _buttonWidth,
       decoration: BoxDecoration(
         color: AppColors.backgroundColor,
-        borderRadius: BorderRadius.circular(_borderRadius),
+        borderRadius: BorderRadius.circular(AppConstants.borderRadius),
         boxShadow: const [AppColors.darkShadow],
       ),
       child: TextButton(

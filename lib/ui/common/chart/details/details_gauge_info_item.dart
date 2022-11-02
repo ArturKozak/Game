@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:game/base/page_base.dart';
 import 'package:game/constants/app_colors.dart';
+import 'package:game/constants/app_constants.dart';
 import 'package:game/ui/common/chart/radial_gauge_statistic_item.dart';
 
 class DetailsGaugeInfoItem extends PageWidget {
-  static const _borderRadius = 16.0;
   static const _padding = 5.0;
   static const _iconSize = 30.0;
 
@@ -22,11 +22,11 @@ class DetailsGaugeInfoItem extends PageWidget {
   });
 
   @override
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     return Container(
       padding: const EdgeInsets.all(_padding),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(_borderRadius),
+        borderRadius: BorderRadius.circular(AppConstants.borderRadius),
         color: AppColors.backgroundColor,
         boxShadow: const [AppColors.darkShadow],
       ),

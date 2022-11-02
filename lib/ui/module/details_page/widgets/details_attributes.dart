@@ -28,9 +28,7 @@ class DetailsAttributes extends PageWidget {
   });
 
   @override
-  Widget widgetBody(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
+  Widget widgetBody(BuildContext context, Size size) {
     String attrIcon(String attr) {
       switch (attr) {
         case _teddyKey:

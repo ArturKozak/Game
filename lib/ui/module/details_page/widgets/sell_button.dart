@@ -10,7 +10,7 @@ class SellButton extends PageWidget {
   const SellButton({super.key});
 
   @override
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: _verticalMargin),
       height: _buttonHeight,

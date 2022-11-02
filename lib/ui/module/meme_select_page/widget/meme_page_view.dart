@@ -14,7 +14,7 @@ class MemePageView extends PageWidget {
   const MemePageView({super.key});
 
   @override
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     return BlocBuilder<MemeViewCubit, MemeViewState>(
       builder: (context, state) {
         final pageController = context.read<MemeViewCubit>().pageController;

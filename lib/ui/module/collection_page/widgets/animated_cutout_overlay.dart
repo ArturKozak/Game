@@ -21,7 +21,7 @@ class AnimatedCutoutOverlay extends PageWidget {
       : super(key: key);
 
   @override
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     return Stack(
       children: [
         child,

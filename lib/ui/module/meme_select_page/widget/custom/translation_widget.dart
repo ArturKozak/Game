@@ -30,7 +30,7 @@ class _TranslationCustomWidgetState extends State<TranslationCustomWidget> {
   static const _primaryBottomPosition = 40.0;
   static const _primaryWidth = 300.0;
   static const _primaryHeight = 400.0;
-  static const _primaryExpandedHeight = 290.0;
+  static const _primaryExpandedHeight = 240.0;
   static const _secondaryHeight = 70.0;
 
   bool isExanded = false;

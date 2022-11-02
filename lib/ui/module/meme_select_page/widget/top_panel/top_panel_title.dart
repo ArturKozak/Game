@@ -9,7 +9,7 @@ class TopPanelTitle extends PageWidget {
   const TopPanelTitle({super.key});
 
   @override
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     return const Padding(
       padding: EdgeInsets.all(AppConstants.smallPadding),
       child: Text(

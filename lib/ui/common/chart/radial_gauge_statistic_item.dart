@@ -29,7 +29,7 @@ class RadialGaugeStatisticItem extends PageWidget {
   });
 
   @override
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     return Padding(
       padding: const EdgeInsets.only(bottom: _bottomPadding),
       child: SizedBox(

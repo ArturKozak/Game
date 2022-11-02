@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:game/base/page_base.dart';
 import 'package:game/constants/app_colors.dart';
 import 'package:game/data/model/meme/meme_model.dart';
 import 'package:game/ui/common/chart/radial_gauge_statistic_item.dart';
 
-class BarChartStatistic extends StatelessWidget {
+class BarChartStatistic extends PageWidget {
   final MemeModel meme;
 
   const BarChartStatistic({required this.meme, super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.end,
