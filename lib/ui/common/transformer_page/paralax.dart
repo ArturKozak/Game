@@ -128,27 +128,38 @@ class ParallaxContainer extends StatelessWidget {
 class ParallaxImage extends StatelessWidget {
   final Image image;
   final double imageFactor;
+  final double scale;
 
-  ParallaxImage.asset(String name,
-      {super.key, required double position, this.imageFactor = 0.3})
-      : image = Image.asset(
+  ParallaxImage.asset(
+    String name, {
+    required double position,
+    super.key,
+    this.scale = 1.0,
+    this.imageFactor = 0.3,
+  }) : image = Image.asset(
           name,
-          fit: BoxFit.cover,
+          fit: BoxFit.fitHeight,
           alignment: FractionalOffset(
             0.5 + position * imageFactor,
             0.5,
           ),
+          scale: scale,
         );
 
-  ParallaxImage.network(String name,
-      {super.key, required double position, this.imageFactor = 0.5})
-      : image = Image.network(
+  ParallaxImage.network(
+    String name, {
+    required double position,
+    super.key,
+    this.scale = 1,
+    this.imageFactor = 0.8,
+  }) : image = Image.network(
           name,
           fit: BoxFit.cover,
           alignment: FractionalOffset(
             0.5 + position * imageFactor,
             0.5,
           ),
+          scale: scale,
         );
 
   @override

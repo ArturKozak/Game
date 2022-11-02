@@ -15,7 +15,7 @@ class HorizontalCardMenu extends PageWidget {
   const HorizontalCardMenu({super.key});
 
   @override
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     return Expanded(
       child: BlocBuilder<SelectMemeCubit, SelectMemeState>(
         builder: (context, state) {

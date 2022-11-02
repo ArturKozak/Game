@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:game/base/cubit/connection_cubit.dart';
+import 'package:game/ui/common/scroll_behavior.dart';
 import 'package:game/utils/app_router.gr.dart';
 
 void main() async {
@@ -26,6 +27,7 @@ class Game extends StatelessWidget {
         routeInformationParser: _appRouter.defaultRouteParser(),
         routerDelegate: _appRouter.delegate(),
         themeMode: ThemeMode.light,
+        scrollBehavior: GameScrollBehavior(),
       ),
     );
   }

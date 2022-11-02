@@ -14,8 +14,8 @@ class MemeCardRare extends PageWidget {
 
   static const _borderRadius = 25.0;
   static const _rarePadding = 5.0;
-  static const _rareIconHeight = 60.0;
-  static const _rareIconWidth = 70.0;
+  static const _rareIconHeight = 50.0;
+  static const _rareIconWidth = 60.0;
   static const _rareIconBottomPosition = 100.0;
 
   final MemeModel meme;
@@ -26,7 +26,7 @@ class MemeCardRare extends PageWidget {
   });
 
   @override
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     String rareIcon() {
       switch (meme.rare) {
         case _commonKey:
@@ -81,7 +81,6 @@ class MemeCardRare extends PageWidget {
         ),
         child: SvgPicture.asset(
           rareIcon(),
-          height: 40,
           color: rareColor(),
         ),
       ),

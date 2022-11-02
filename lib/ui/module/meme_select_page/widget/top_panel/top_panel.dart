@@ -9,13 +9,12 @@ class TopPanel extends PageWidget {
   static const _animDuration = 400;
   static const _topPanenPadding = 20.0;
   static const _boxShape = 25.0;
-  static const _panelHeight = 170.0;
   static const _panelWidht = 320.0;
 
   const TopPanel({super.key});
 
   @override
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     return TweenAnimationBuilder<double>(
       tween: Tween(begin: 1.0, end: 0.0),
       builder: (context, value, child) {
@@ -30,7 +29,7 @@ class TopPanel extends PageWidget {
         child: Align(
           alignment: Alignment.topCenter,
           child: Container(
-            height: _panelHeight,
+            height: size.height * 0.2,
             width: _panelWidht,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(_boxShape),

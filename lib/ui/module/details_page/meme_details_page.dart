@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:game/base/connection_page_base.dart';
 import 'package:game/constants/app_colors.dart';
+import 'package:game/constants/app_constants.dart';
 import 'package:game/data/model/meme/meme_model.dart';
 import 'package:game/ui/common/chart/details/details_bar_chart_statistic.dart';
 import 'package:game/ui/module/details_page/widgets/details_attributes.dart';
@@ -10,7 +11,6 @@ import 'package:game/ui/module/details_page/widgets/details_title.dart';
 import 'package:game/ui/module/details_page/widgets/sell_button.dart';
 
 class MemeDetailsPage extends ConnectionPageBase {
-  static const _topBorderRadius = 16.0;
   static const _bottomMargin = 70.0;
 
   final MemeModel meme;
@@ -41,7 +41,8 @@ class MemeDetailsPage extends ConnectionPageBase {
                 width: size.width * 0.9,
                 margin: const EdgeInsets.only(bottom: _bottomMargin),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(_topBorderRadius),
+                  borderRadius:
+                      BorderRadius.circular(AppConstants.borderRadius),
                   color: AppColors.darkBackColor,
                 ),
                 child: Column(

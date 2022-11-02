@@ -15,5 +15,5 @@ class AppIcons {
   static final notesAttr = _fullSvgPath('notes');
   static final heartAttr = _fullSvgPath('heart');
   static final lanternAttr = _fullSvgPath('lantern');
-    static final powerAttr = _fullSvgPath('power');
+  static final powerAttr = _fullSvgPath('power');
 }

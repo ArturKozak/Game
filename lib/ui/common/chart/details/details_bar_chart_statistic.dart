@@ -10,7 +10,7 @@ class DetailsBarChartStatistic extends PageWidget {
   const DetailsBarChartStatistic({required this.meme, super.key});
 
   @override
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.end,

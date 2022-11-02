@@ -14,7 +14,7 @@ abstract class ConnectionPageBase extends PageWidget
 
   @override
   @nonVirtual
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     final blocInternet = BlocProvider.of<InternetCubit>(context, listen: false);
 
     return BlocListener<InternetCubit, InternetState>(

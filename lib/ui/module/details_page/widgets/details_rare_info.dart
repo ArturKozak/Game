@@ -26,7 +26,7 @@ class DetailsRareInfo extends PageWidget {
   });
 
   @override
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     String rareIcon() {
       switch (meme.rare) {
         case _commonKey:

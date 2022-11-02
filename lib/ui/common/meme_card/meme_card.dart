@@ -12,9 +12,6 @@ class MemeCard extends PageWidget {
   static const _borderWidth = 8.0;
   static const _borderRadius = 25.0;
 
-  static const cardWidth = 300.0;
-  static const cardHeight = 400.0;
-
   final MemeModel meme;
   final bool isShadow;
   final double? position;
@@ -27,14 +24,14 @@ class MemeCard extends PageWidget {
   });
 
   @override
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     return Padding(
       padding: const EdgeInsets.only(bottom: AppConstants.smallPadding),
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Container(
-          height: cardHeight,
-          width: cardWidth,
+          height: size.height * 0.5,
+          width: size.width * 0.83,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(_borderRadius),
             color: AppColors.darkBackColor,

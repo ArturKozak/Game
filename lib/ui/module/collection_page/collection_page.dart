@@ -85,8 +85,9 @@ class _MemeGalleryState extends State<MemeGallery> {
 
   @override
   Widget build(BuildContext context) {
-    Size imgSize =
-        (const Size(MemeCard.cardWidth, MemeCard.cardHeight)) * _scale;
+    final size = MediaQuery.of(context).size;
+
+    Size imgSize = (Size(size.width * 0.83, size.height * 0.55)) * _scale;
     const padding = 10.0;
     var gridOffset = _calculateCurrentOffset(padding, imgSize);
     gridOffset += Offset(0, -MediaQuery.of(context).padding.top / 2);

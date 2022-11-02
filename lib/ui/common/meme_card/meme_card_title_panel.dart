@@ -13,7 +13,7 @@ class MemeCardTitlePanel extends PageWidget {
   const MemeCardTitlePanel({super.key, required this.meme});
 
   @override
-  Widget widgetBody(BuildContext context) {
+  Widget widgetBody(BuildContext context, Size size) {
     return Positioned(
       bottom: _panelBottomPosition,
       left: _panelLeftPosition,
