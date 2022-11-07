@@ -4,6 +4,7 @@ import 'package:game/base/page_base.dart';
 import 'package:game/constants/app_colors.dart';
 import 'package:game/constants/app_svg.dart';
 import 'package:game/data/model/meme/meme_model.dart';
+import 'package:game/ui/common/hero_widget.dart';
 
 class MemeCardRare extends PageWidget {
   static const _commonKey = 'common';
@@ -79,9 +80,12 @@ class MemeCardRare extends PageWidget {
             bottomLeft: Radius.circular(_borderRadius),
           ),
         ),
-        child: SvgPicture.asset(
-          rareIcon(),
-          color: rareColor(),
+        child: HeroWidget(
+          tag: meme.id,
+          child: SvgPicture.asset(
+            rareIcon(),
+            color: rareColor(),
+          ),
         ),
       ),
     );
