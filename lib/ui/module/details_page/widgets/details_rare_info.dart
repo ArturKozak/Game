@@ -4,6 +4,7 @@ import 'package:game/base/page_base.dart';
 import 'package:game/constants/app_colors.dart';
 import 'package:game/constants/app_svg.dart';
 import 'package:game/data/model/meme/meme_model.dart';
+import 'package:game/ui/common/hero_widget.dart';
 
 class DetailsRareInfo extends PageWidget {
   static const _commonKey = 'common';
@@ -103,10 +104,13 @@ class DetailsRareInfo extends PageWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              rareIcon(),
-              color: rareColor(),
-              height: _svgSize,
+            HeroWidget(
+              tag: meme.id,
+              child: SvgPicture.asset(
+                rareIcon(),
+                color: rareColor(),
+                height: _svgSize,
+              ),
             ),
             Text(
               rareTitle(),
