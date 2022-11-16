@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:game/base/page_base.dart';
 import 'package:game/constants/app_colors.dart';
+import 'package:game/constants/app_constants.dart';
 
-class SellButton extends PageWidget {
+class GameButton extends PageWidget {
   static const _verticalMargin = 20.0;
   static const _buttonHeight = 60.0;
   static const _buttonWidth = 200.0;
 
-  const SellButton({super.key});
+  final String title;
+
+  const GameButton({
+    required this.title,
+    super.key,
+  });
 
   @override
   Widget widgetBody(BuildContext context, Size size) {
@@ -17,12 +23,12 @@ class SellButton extends PageWidget {
       width: _buttonWidth,
       decoration: BoxDecoration(
         color: AppColors.activeColor,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(AppConstants.borderRadius),
       ),
-      child: const Center(
+      child: Center(
         child: Text(
-          'Sell meme',
-          style: TextStyle(
+          title,
+          style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
             color: AppColors.darkBackColor,

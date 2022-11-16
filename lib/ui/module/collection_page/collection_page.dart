@@ -4,12 +4,10 @@ import 'package:game/data/model/meme/meme_model.dart';
 import 'package:game/ui/module/collection_page/widgets/animated_cutout_overlay.dart';
 import 'package:game/ui/module/collection_page/widgets/swipe_detector.dart';
 import 'package:game/ui/common/meme_card/meme_card.dart';
+import 'package:game/utils/router.dart';
 
 class MemeGallery extends StatefulWidget {
-  final List<MemeModel> memeCollection;
-
   const MemeGallery({
-    required this.memeCollection,
     super.key,
   });
 
@@ -26,7 +24,7 @@ class _MemeGalleryState extends State<MemeGallery> {
   bool _skipNextOffsetTween = false;
   Duration swipeDuration = const Duration(milliseconds: 300);
   final _memeIds = ValueNotifier<List<MemeModel>>([]);
-  int get _imgCount => widget.memeCollection.length;
+  int get _imgCount => MemeRepo.memes.length;
 
   @override
   void initState() {
@@ -35,7 +33,7 @@ class _MemeGalleryState extends State<MemeGallery> {
   }
 
   Future<void> _initPhotoIds() async {
-    setState(() => _memeIds.value = widget.memeCollection);
+    setState(() => _memeIds.value = MemeRepo.memes);
   }
 
   void _setIndex(int value, {bool skipAnimation = false}) {
@@ -87,7 +85,7 @@ class _MemeGalleryState extends State<MemeGallery> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    Size imgSize = (Size(size.width * 0.83, size.height * 0.55)) * _scale;
+    Size imgSize = (Size(size.width * 0.83, size.height * 0.5)) * _scale;
     const padding = 10.0;
     var gridOffset = _calculateCurrentOffset(padding, imgSize);
     gridOffset += Offset(0, -MediaQuery.of(context).padding.top / 2);
@@ -159,7 +157,13 @@ class _MemeGalleryState extends State<MemeGallery> {
                 tween: Tween(begin: 1, end: 1),
                 builder: (_, value, child) =>
                     Transform.scale(scale: value, child: child),
-                child: MemeCard(meme: widget.memeCollection[index]),
+                child: GestureDetector(
+                  onTap: () =>
+                      GameRouter.toDetailsPage(MemeRepo.memes[index], context),
+                  child: MemeCard(
+                    meme: MemeRepo.memes[index],
+                  ),
+                ),
               ),
             ),
           ),

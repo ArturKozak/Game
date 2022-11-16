@@ -28,7 +28,7 @@ class MemeSelectPage extends ConnectionPageBase {
   }
 
   @override
-  Widget readyContent(BuildContext context) {
+  Widget readyContent(BuildContext context, Size size) {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
