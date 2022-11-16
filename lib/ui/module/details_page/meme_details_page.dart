@@ -8,7 +8,7 @@ import 'package:game/ui/module/details_page/widgets/details_attributes.dart';
 import 'package:game/ui/module/details_page/widgets/details_image_background.dart';
 import 'package:game/ui/module/details_page/widgets/details_rare_info.dart';
 import 'package:game/ui/module/details_page/widgets/details_title.dart';
-import 'package:game/ui/module/details_page/widgets/sell_button.dart';
+import 'package:game/ui/common/game_button.dart';
 
 class MemeDetailsPage extends ConnectionPageBase {
   static const _bottomMargin = 70.0;
@@ -25,9 +25,7 @@ class MemeDetailsPage extends ConnectionPageBase {
   }
 
   @override
-  Widget readyContent(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
+  Widget readyContent(BuildContext context, Size size) {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: SingleChildScrollView(
@@ -53,7 +51,7 @@ class MemeDetailsPage extends ConnectionPageBase {
                     DetailsRareInfo(meme: meme),
                     DetailsBarChartStatistic(meme: meme),
                     DetailsAttributes(meme: meme),
-                    const SellButton(),
+                    const GameButton(title: 'Sell Meme'),
                   ],
                 ),
               ),
