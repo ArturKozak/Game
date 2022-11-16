@@ -10,7 +10,10 @@ abstract class ConnectionPageBase extends PageWidget
   const ConnectionPageBase({super.key});
 
   @protected
-  Widget readyContent(BuildContext context);
+  Widget readyContent(
+    BuildContext context,
+    Size size,
+  );
 
   @override
   @nonVirtual
@@ -27,7 +30,7 @@ abstract class ConnectionPageBase extends PageWidget
           context.read<InternetCubit>().closeConnectionDialog(context);
         }
       }),
-      child: readyContent(context),
+      child: readyContent(context, size),
     );
   }
 }
