@@ -1,5 +1,4 @@
 import 'package:animated_widgets/widgets/translation_animated.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:game/constants/app_colors.dart';
@@ -8,7 +7,7 @@ import 'package:game/data/model/meme/meme_model.dart';
 import 'package:game/ui/common/meme_card/meme_card.dart';
 import 'package:game/ui/module/meme_select_page/cubit/view_cubit/meme_view_cubit.dart';
 import 'package:game/ui/module/meme_select_page/widget/custom/bottom_button.dart';
-import 'package:game/utils/app_router.gr.dart';
+import 'package:game/utils/router.dart';
 
 class TranslationCustomWidget extends StatefulWidget {
   final MemeModel item;
@@ -54,10 +53,6 @@ class _TranslationCustomWidgetState extends State<TranslationCustomWidget> {
     await context.read<MemeViewCubit>().onClicked(meme: widget.item);
   }
 
-  void _navigate(MemeModel meme) => AutoRouter.of(context).push(
-        MemeDetailsRoute(meme: meme),
-      );
-
   @override
   Widget build(BuildContext context) {
     return TranslationAnimatedWidget(
@@ -97,7 +92,10 @@ class _TranslationCustomWidgetState extends State<TranslationCustomWidget> {
                         label: 'Select',
                       ),
                       BottomButtom(
-                        onTap: () => _navigate(widget.item),
+                        onTap: () => GameRouter.toDetailsPage(
+                          widget.item,
+                          context,
+                        ),
                         label: 'Details',
                       ),
                     ],
